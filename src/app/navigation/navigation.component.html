@@ -1,30 +1,21 @@
 
 <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
   <div class="container">
-    <a routerLink="/" class="navbar-brand"><img src="assets/fusio_32px.png"></a>
+    <a routerLink="/" *ngIf="isAuthenticated" class="navbar-brand"><img src="assets/bunzl-logo.png"></a>
     <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/bootstrap">Get started</a>
-        </li>
-        <li class="nav-item">
+
+        <li class="nav-item" *ngIf="isAuthenticated">
           <a class="nav-link" routerLink="/authorization">Authorization</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isAuthenticated">
           <a class="nav-link" routerLink="/api">REST API</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/sdk">SDK</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/support">Support</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about">About</a>
-        </li>
+
+
       </ul>
       <span class="navbar-text me-2" *ngIf="isAuthenticated && account?.name">
         Logged in as <a routerLink="/account">{{ account?.name }}</a>
