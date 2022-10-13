@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'sdk', component: SdkComponent},
   {path: 'support', component: SupportComponent},
   {path: 'about', component: AboutComponent},
+  {path: 'register', component: HomeComponent},
 ];
 
 routes.push(...RouteBuilder.getRoutes());

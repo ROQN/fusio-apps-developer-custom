@@ -3,6 +3,7 @@ import {Message} from "fusio-sdk/dist/src/generated/consumer/Message";
 import {Page} from "fusio-sdk/dist/src/generated/consumer/Page";
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 import {ConsumerService, ErrorConverter} from "ngx-fusio-sdk";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-page',
@@ -15,10 +16,14 @@ export abstract class PageComponent implements OnInit {
   page?: Page
   content?: SafeHtml
 
-  constructor(private consumer: ConsumerService, protected sanitizer: DomSanitizer) { }
+  constructor(private consumer: ConsumerService, protected sanitizer: DomSanitizer, private router: Router) { }
 
   async ngOnInit(): Promise<void> {
     try {
+      if (!this.consumer.hasValidToken()) {
+        await this.router.navigate(['/login']);
+      }
+
       const page = await this.consumer.getClientAnonymous().getConsumerPageByPageId(this.getId());
       const response = await page.consumerActionPageGet();
 
