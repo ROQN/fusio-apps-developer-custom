@@ -18,9 +18,9 @@
 }
 
 .container {
-  max-width: 100%;
+  max-width: 100% !important;
 }
 
 fusio-account-container div fusio-account img.ms-4 {
-  display: none;
+  display: none !important;
 }
