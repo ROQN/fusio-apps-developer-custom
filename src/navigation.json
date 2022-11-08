@@ -93,12 +93,6 @@
           "icon": "bi-download",
           "path": "/sdk",
           "scope": "backend.sdk"
-        },
-        {
-          "title": "Subscription",
-          "icon": "bi-calendar-plus",
-          "path": "/subscription",
-          "scope": "backend.event"
         }
       ]
     },

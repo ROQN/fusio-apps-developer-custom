@@ -1,0 +1,13 @@
+.custom-link-style:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.custom-link-style:active {
+  color: #000;
+  text-decoration: underline;
+}
+
+.custom-auth-text-style, .custom-auth-text-style a {
+  color: #000;
+}

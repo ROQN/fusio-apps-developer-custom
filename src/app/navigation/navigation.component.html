@@ -9,15 +9,15 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a class="nav-link" routerLink="/authorization">Authorization</a>
+          <a class="nav-link custom-link-style" routerLink="/authorization">Authorization</a>
         </li>
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a class="nav-link" routerLink="/api">REST API</a>
+          <a class="nav-link custom-link-style" routerLink="/api">REST API</a>
         </li>
 
 
       </ul>
-      <span class="navbar-text me-2" *ngIf="isAuthenticated && account?.name">
+      <span class="navbar-text me-2 custom-auth-text-style" *ngIf="isAuthenticated && account?.name">
         Logged in as <a routerLink="/account">{{ account?.name }}</a>
       </span>
       <form class="d-flex">
