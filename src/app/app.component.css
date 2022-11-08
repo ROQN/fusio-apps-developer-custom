@@ -2,10 +2,10 @@
   max-width: 100% !important;
 }
 
-img.ms-4 {
+:host ::ng-deep img.ms-4 {
   display: none !important;
 }
 
-.nav-tabs.nav li:last-child {
+:host ::ng-deep .nav-tabs.nav li:last-child {
   display: none !important;
 }
