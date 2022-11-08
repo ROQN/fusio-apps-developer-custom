@@ -1,10 +1,12 @@
-.custom-link-style:hover {
+.custom-link-style {
   color: #000;
+}
+
+.custom-link-style:hover {
   text-decoration: none;
 }
 
 .custom-link-style:active {
-  color: #000;
   text-decoration: underline;
 }
 
@@ -15,12 +17,4 @@
 .bg-dark {
   background-color: #fff !important;
   box-shadow: 0 3px 5px rgb(57 63 72 / 30%);
-}
-
-.container {
-  max-width: 100% !important;
-}
-
-fusio-account-container div fusio-account img.ms-4 {
-  display: none !important;
 }
