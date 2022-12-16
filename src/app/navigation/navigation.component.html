@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
   <div class="container">
-    <a routerLink="/" *ngIf="isAuthenticated" (click)="setActive('main')" class="navbar-brand"><img src="assets/bunzl-logo.png"></a>
+    <a routerLink="/account" *ngIf="isAuthenticated" (click)="setActive('main')" class="navbar-brand"><img src="assets/bunzl-logo.png"></a>
     <p class="title">API Information And Access</p>
     <div class="verticalLine"></div>
     <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">

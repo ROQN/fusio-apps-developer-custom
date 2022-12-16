@@ -20,8 +20,12 @@ export abstract class PageComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     try {
-      if (!this.consumer.hasValidToken()) {
+      if (!this.consumer.hasValidToken() || this.getId() == '~overview') {
         await this.router.navigate(['/login']);
+      }
+
+      if (this.consumer.hasValidToken() && this.getId() == '~overview') {
+        await this.router.navigate(['/account']);
       }
 
       const page = await this.consumer.getClientAnonymous().getConsumerPageByPageId(this.getId());
